@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "880798844591",
+    "project_id": "atividadekotlin",
+    "storage_bucket": "atividadekotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880798844591:android:cffa9f592c64109599765a",
+        "android_client_info": {
+          "package_name": "com.example.atividadekotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0AkqWgwe5JTRRyFZIolOEr_-af2P6R0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
