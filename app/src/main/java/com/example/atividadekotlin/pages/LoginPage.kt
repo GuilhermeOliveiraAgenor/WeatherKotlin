@@ -177,7 +177,7 @@ fun Login(navController: NavController, authViewModel :AuthViewModel) {
             onClick = {
                 if(isConnected){
                     Log.i("iuiiu","Conectado")
-                    authViewModel.login(email,senha){ result, error ->
+                    authViewModel.login(email.trim(),senha){ result, error ->
                         if(result){
                             navController.navigate("menu")
                         }
@@ -188,7 +188,7 @@ fun Login(navController: NavController, authViewModel :AuthViewModel) {
                 }
                 else{
                     Log.i("iuiiu","Desconectado")
-                    userViewModel.loginUsuario(email, senha){ result ->
+                    userViewModel.loginUsuario(email.trim(), senha){ result ->
                         result.onSuccess { userList ->
                             navController.navigate("listar/$email")
                         }.onFailure { exception ->

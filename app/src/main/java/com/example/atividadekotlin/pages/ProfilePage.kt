@@ -136,13 +136,11 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
         ) {//centraliza
             Icon(
                 modifier = Modifier
-                    .width(120.dp)
-                    .height(120.dp),//tamanho do icone
+                    .width(90.dp)
+                    .height(90.dp),//tamanho do icone
                 imageVector = Icons.Default.AccountCircle, contentDescription = "Icon", tint = Color(0xFFE64A19) // Define a cor do ícone como laranja
 
             )//icone
-
-            Spacer(modifier = Modifier.height(20.dp))
 
             val context = LocalContext.current
 
@@ -179,7 +177,7 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
                     textStyle = TextStyle(fontSize = 18.sp)
                 )
 
-                Spacer(modifier = Modifier.height(30.dp))
+                Spacer(modifier = Modifier.height(25.dp))
 
                 TextField(
                     modifier = Modifier
@@ -205,7 +203,7 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
                     textStyle = TextStyle(fontSize = 18.sp)
                 )
 
-                Spacer(modifier = Modifier.height(30.dp))
+                Spacer(modifier = Modifier.height(25.dp))
 
                 TextField(
                     modifier = Modifier
@@ -231,7 +229,7 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
                     textStyle = TextStyle(fontSize = 18.sp)
                 )
 
-                Spacer(modifier = Modifier.height(30.dp))
+                Spacer(modifier = Modifier.height(25.dp))
 
                 ExposedDropdownMenuBox(
                     expanded = isexpanded,
@@ -243,14 +241,17 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
                             local = it
                         },
                         label = {
-                            Text(text = "Localização Principal")
+                            Text(
+                                text = "Localização Principal",
+                                fontSize = 16.sp // Define o tamanho da fonte do rótulo
+                            )
                         },
                         trailingIcon = {
                             IconButton(onClick = {}) {
                                 Icon(
                                     Icons.Filled.ArrowDropDown,
                                     contentDescription = "Editar"
-                                ) // ícone no final do text
+                                )
                             }
                         },
                         keyboardOptions = KeyboardOptions(
@@ -259,10 +260,11 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
                         ),
                         keyboardActions = KeyboardActions(
                             onSearch = {
-                                Log.d("ImeAction", "ipiiopoi") // mostra mensagem ao clicar no botão
+                                Log.d("ImeAction", "ipiiopoi")
                             }
                         ),
                         colors = ExposedDropdownMenuDefaults.textFieldColors(),
+                        textStyle = TextStyle(fontSize = 18.sp), // Define o tamanho da fonte do valor
                         modifier = Modifier
                             .fillMaxWidth()
                             .background(Color(0xFFF5F5F5), shape = RoundedCornerShape(16.dp))
@@ -287,8 +289,7 @@ fun ProfilePage(modifier: Modifier = Modifier, navController: NavController, dao
                     }
                 }
 
-
-                Spacer(modifier = Modifier.padding(20.dp))
+                Spacer(modifier = Modifier.padding(15.dp))
 
                 Button(
                     modifier = Modifier

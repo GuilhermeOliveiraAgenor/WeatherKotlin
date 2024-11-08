@@ -71,15 +71,14 @@ fun CadastroPage(modifier: Modifier = Modifier, navController: NavController, dA
                 .wrapContentHeight(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Spacer(modifier = Modifier.padding(10.dp))
 
             Text(
-                text = "Faça o seu cadastro já!",
+                text = "Faça o seu cadastro !",
                 fontSize = 30.sp,
                 color = Color(0xFFE64A19)
             )
 
-            Spacer(modifier = Modifier.padding(20.dp))
+            Spacer(modifier = Modifier.padding(5.dp))
 
             Column(
                 modifier = Modifier
@@ -223,7 +222,7 @@ fun CadastroPage(modifier: Modifier = Modifier, navController: NavController, dA
                         .fillMaxWidth()
                         .height(56.dp),
                     onClick = {
-                        authViewModel.cadastrarUsuario(email,senha){result, error ->
+                        authViewModel.cadastrarUsuario(email.trim(),senha){result, error ->
                             if(result){
                                 var userData = Usuario(
                                     nome = nome,
@@ -239,10 +238,10 @@ fun CadastroPage(modifier: Modifier = Modifier, navController: NavController, dA
                                     principal = "Ativo"
                                 )
 
-                                dAOViewModel.cadastrarUsuario(usuario = userData, localizacaoPrincipal = localizacaoPrincipalData, localizacao = localizacaoData, email = email, context = context){result, error ->
+                                dAOViewModel.cadastrarUsuario(usuario = userData, localizacaoPrincipal = localizacaoPrincipalData, localizacao = localizacaoData, email = email.trim(), context = context){result, error ->
                                     if(result){
                                         Log.i("iiuiiu", auth.currentUser?.email!!)
-                                        userViewModel.cadastrarUsuario(nome = nome, telefone = telefone, email = email, senha = senha, local = descricao)
+                                        userViewModel.cadastrarUsuario(nome = nome, telefone = telefone, email = email.trim(), senha = senha, local = descricao)
                                         navController.navigate("localizacoes")
                                     }
                                     else{

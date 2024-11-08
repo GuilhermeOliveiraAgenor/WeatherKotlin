@@ -45,7 +45,7 @@ fun MainScreen(modifier: Modifier = Modifier, navController: NavHostController, 
     val items = listOf(
         NavItem("Perfil", Icons.Default.AccountCircle, 1),
         NavItem("Menu", Icons.Default.Home, 0),
-        NavItem("Localizações", Icons.Default.Place, 0),
+        NavItem("Locais", Icons.Default.Place, 0),
         NavItem("Adicionar", Icons.Default.Add, 0)
     )
 
